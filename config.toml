@@ -3,58 +3,43 @@ languageCode = "en-us"
 title = "Third Day Horticulture"
 theme = "minimal-master"
 
+[menu]
+
+[[menu.main]]
+    name = "Home"
+    url  = "/"
+    weight = 1
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact/"
+    weight = 2
+
+[[menu.main]]
+    name = "Projects"
+    url  = "/projects/"
+    weight = 3
+
 [params]
     author = "Dan Burgett"
     description = "A company for serving east texas' Horticulture needs"
-    githubUsername = "#"
+    githubUsername = ""
     accent = "green"
     showBorder = true
     backgroundColor = "white"
     font = "Raleway" # should match the name on Google Fonts!
-    highlight = true
-    highlightStyle = "solarized-dark"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift"]
 
-    [[menu.main]]
-        url = "/"
-        name = "Home"
-        weight = 1
+# Portfolio section
+[params.portfolio]
+  enable = true
+  # All projects defined in their own files. You can find example projects
+  # at 'exampleSite/data/projects'. Copy the 'projects' folder into the 'data' directory
+  # at the root of this Hugo site.
+  # For more informtion take a look at the README.
+  title = "Previous Customers"
 
-    [[menu.main]]
-        url = "/post/"
-        name = "Posts"
-        weight = 2
-
-    [[menu.main]]
-        url = "/project/"
-        name = "Projects"
-        weight = 3
-
-    # Social icons to be shown on the right-hand side of the navigation bar
-    # The "name" field should match the name of the icon to be used
-    # The list of available icons can be found at http://fontawesome.io/icons/
-
-    [[menu.icon]]
-        url = "mailto:me@example.com"
-        name = "envelope-o"
-        weight = 1
-
-    [[menu.icon]]
-        url = "https://github.com/username/"
-        name = "github"
-        weight = 2
-
-    [[menu.icon]]
-        url = "https://twitter.com/username/"
-        name = "twitter"
-        weight = 3
-
-    [[menu.icon]]
-        url = "https://www.linkedin.com/in/username/"
-        name = "linkedin"
-        weight = 4
-
-    [[menu.icon]]
-        url = "https://www.stackoverflow.com/username/"
-        name = "stack-overflow"
-        weight = 5
+  [params.portfolio.modal]
+    client = "Client"
+    date = "Date"
+    category = "Category"
+    buttonText = "Close project"
