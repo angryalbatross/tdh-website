@@ -8,11 +8,19 @@
       </div>
     </div>
     <div class="row">
+      <div class="col-sm-12">
+        <img src="logo.png" class="img-fluid" alt="TDH Logo">
+      </div>
+    </div>
+    <div class="row" >
+      <br>
+    </div>
+    <div class="row">
       <div class="col-sm-6">
-        <img src="../logo.PNG" class="img-fluid" alt="TDH Logo">
+        <p>{{ markdownify .Site.Params.Tagline }}</p>
       </div>
       <div class="col-sm-6">
-        <h4>{{ markdownify .Site.Params.Description }}</h4>
+        <p>{{ markdownify .Site.Params.Description }}</p>
       </div>
     </div>
   </div>

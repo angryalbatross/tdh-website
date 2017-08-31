@@ -22,7 +22,8 @@ theme = "minimal-master"
 
 [params]
     author = "Dan Burgett"
-    description = "A company for serving east texas' Horticulture needs"
+    tagline = "Founded in 2016, our company is dedicated to helping businesses and residents of Tyler, Texas create beautiful floral pots and planters."
+    description = "We can help with simple consultation, installation and maintenance of any landscape.  We are not afraid to get our hands dirty!"
     githubUsername = ""
     accent = "green"
     showBorder = true
