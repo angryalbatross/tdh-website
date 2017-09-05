@@ -3,7 +3,15 @@ languageCode = "en-us"
 title = "Third Day Horticulture"
 theme = "minimal-master"
 
-[menu]
+[params]
+    author = "Dan Burgett"
+    tagline = "Founded in 2016, our company is dedicated to helping businesses and residents of Tyler, Texas create beautiful floral pots and planters."
+    description = "We can help with simple consultation, installation and maintenance of any landscape.  We are not afraid to get our hands dirty!"
+    githubUsername = ""
+    accent = "green"
+    showBorder = true
+    backgroundColor = "white"
+    font = "Raleway" # should match the name on Google Fonts!
 
 [[menu.main]]
     name = "Home"
@@ -20,15 +28,11 @@ theme = "minimal-master"
     url  = "/projects/"
     weight = 3
 
-[params]
-    author = "Dan Burgett"
-    tagline = "Founded in 2016, our company is dedicated to helping businesses and residents of Tyler, Texas create beautiful floral pots and planters."
-    description = "We can help with simple consultation, installation and maintenance of any landscape.  We are not afraid to get our hands dirty!"
-    githubUsername = ""
-    accent = "green"
-    showBorder = true
-    backgroundColor = "white"
-    font = "Raleway" # should match the name on Google Fonts!
+#contact setion
+[params.contact]
+    title = "Contact us"
+    subtitle  = "Lorem ipsum dolor sit amet consectetur."
+    buttonText = "Send message"
 
 # Portfolio section
 [params.portfolio]
