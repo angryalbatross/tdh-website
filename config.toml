@@ -6,7 +6,7 @@ theme = "minimal-master"
 [params]
     author = "Dan Burgett"
     tagline = "Founded in 2016, our company is dedicated to helping businesses and residents of Tyler, Texas create beautiful floral pots and planters."
-    description = "We can help with simple consultation, installation and maintenance of any landscape.  We are not afraid to get our hands dirty!"
+    description = "We can help with simple consultation, installation and maintenance of any landscape. Don't be afraid to get our hands dirty!"
     githubUsername = ""
     accent = "green"
     showBorder = true
@@ -30,9 +30,23 @@ theme = "minimal-master"
 
 #contact setion
 [params.contact]
-    title = "Contact us"
-    subtitle  = "Lorem ipsum dolor sit amet consectetur."
     buttonText = "Send message"
+# 'warning' defines error messages for invalid inputs
+[params.contact.form.name]
+  text = "Your Name *"
+  warning = "Please enter your name."
+
+[params.contact.form.email]
+  text = "Your Email *"
+  warning = "Please enter your email address."
+
+[params.contact.form.phone]
+  text = "Your Phone *"
+  warning = "Please enter your phone number."
+
+[params.contact.form.message]
+  text = "Your Message *"
+  warning = "Please enter a message."
 
 # Portfolio section
 [params.portfolio]
