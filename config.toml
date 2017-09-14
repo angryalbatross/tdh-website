@@ -5,8 +5,8 @@ theme = "minimal-master"
 
 [params]
     author = "Dan Burgett"
-    tagline = "Founded in 2016, our company is dedicated to helping businesses and residents of Tyler, Texas create beautiful floral pots and planters."
-    description = "We can help with simple consultation, installation and maintenance of any landscape. Don't be afraid to get our hands dirty!"
+    tagline = "We are dedicated to helping businesses and residents of Tyler create beautiful floral pots and planters."
+    description = "Our founder Alison Burgett used to work at the United States Botanic Garden in Washington D.C. She has a Masters Degree in Plant Science and a Bachelors in Horticulture."
     githubUsername = ""
     accent = "green"
     showBorder = true
@@ -55,7 +55,7 @@ theme = "minimal-master"
   # at 'exampleSite/data/projects'. Copy the 'projects' folder into the 'data' directory
   # at the root of this Hugo site.
   # For more informtion take a look at the README.
-  title = "Previous Customers"
+  title = "Projects"
 
   [params.portfolio.modal]
     client = "Client"

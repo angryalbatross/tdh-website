@@ -5,8 +5,6 @@ type = "contact"
 layout = "contact"
 +++
 
-# We are here to help you
+# Don't be afraid to get our hands dirty!
 
-Are you curious about something? Do you have some kind of problem with our products? As am hastily invited settled at limited civilly fortune me. Really spring in extent an by. Judge but built gay party world. Of so am he remember although required. Bachelor unpacked be advanced at. Confined in declared marianne is vicinity.
-
-Please feel free to contact us, our customer service center is working for you 24/7.
+We can help with simple consultation, installation or maintenance of any landscape. Let us create our next floral masterpiece in front of your business!

@@ -1,28 +1,30 @@
 {{ partial "header" . }}
 
-<main>
+<main style="margin-top:0; padding-top:0;">
 
     <!-- <div class="intro"> -->
 
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm-12">
-            <h1>{{ .Site.Title }}</h1>
+            <img src="logo.png" class="img-fluid" alt="TDH Logo">
           </div>
         </div>
         <div class="row">
           <div class="col-sm-12">
-            <img src="logo.png" class="img-fluid" alt="TDH Logo">
+            <h1>{{ .Site.Title }}</h1>
           </div>
         </div>
         <div class="row" >
-          <br>
+          <hr>
         </div>
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-12">
             <p>{{ markdownify .Site.Params.Tagline }}</p>
           </div>
-          <div class="col-sm-6">
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
             <p>{{ markdownify .Site.Params.Description }}</p>
           </div>
         </div>
