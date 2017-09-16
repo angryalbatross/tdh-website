@@ -1,7 +1,7 @@
-baseURL = "http://example.com/"
+baseURL = "https://3rddayhort.github.io/"
 languageCode = "en-us"
 title = "Third Day Horticulture"
-theme = "minimal-master"
+theme = "minimal"
 
 [params]
     author = "Dan Burgett"
