@@ -25,7 +25,7 @@ theme = "minimal"
 
 [[menu.main]]
     name = "Projects"
-    url  = "/projects/"
+    url  = "/Projects/"
     weight = 3
 
 #contact setion
@@ -55,10 +55,8 @@ theme = "minimal"
   # at 'exampleSite/data/projects'. Copy the 'projects' folder into the 'data' directory
   # at the root of this Hugo site.
   # For more informtion take a look at the README.
-  title = "Projects"
+  title = "Portfolio"
+  subtitle = "Below are some examples of our work"
 
   [params.portfolio.modal]
-    client = "Client"
-    date = "Date"
-    category = "Category"
-    buttonText = "Close project"
+    buttonText = "Close"
