@@ -6,7 +6,7 @@ theme = "minimal"
 [params]
     author = "Dan Burgett"
     tagline = "We are dedicated to helping businesses and residents of Tyler create beautiful floral pots and planters."
-    description = "Our founder Alison Burgett used to work at the United States Botanic Garden in Washington D.C. She has a Masters Degree in Plant Science and a Bachelors in Horticulture."
+    description = "Our founder Alison Burgett is an alumni of the United States Botanic Garden in Washington D.C. She has a Masters Degree in Plant Science and a Bachelors in Horticulture."
     githubUsername = ""
     accent = "green"
     showBorder = true

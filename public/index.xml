@@ -2,11 +2,13 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Third Day Horticulture</title>
-    <link>https://3rddayhort.github.io/index.xml</link>
+    <link>https://3rddayhort.github.io/</link>
     <description>Recent content on Third Day Horticulture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://3rddayhort.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://3rddayhort.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Contact</title>
@@ -14,12 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://3rddayhort.github.io/contact/</guid>
-      <description>
-
-&lt;h1 id=&#34;don-t-be-afraid-to-get-our-hands-dirty&#34;&gt;Don&amp;rsquo;t be afraid to get our hands dirty!&lt;/h1&gt;
-
-&lt;p&gt;We can help with simple consultation, installation or maintenance of any landscape. Let us create our next floral masterpiece in front of your business!&lt;/p&gt;
-</description>
+      <description>Don&amp;rsquo;t be afraid to get our hands dirty! We can help with simple consultation, installation or maintenance of any landscape. Let us create our next floral masterpiece in front of your business!</description>
     </item>
     
     <item>
@@ -28,12 +25,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://3rddayhort.github.io/projects/</guid>
-      <description>
-
-&lt;h1 id=&#34;see-our-work&#34;&gt;See our work&lt;/h1&gt;
-
-&lt;p&gt;We work very hard to make sure our plants look the best in town!&lt;/p&gt;
-</description>
+      <description>See our work We work very hard to make sure our plants look the best in town!</description>
     </item>
     
   </channel>
