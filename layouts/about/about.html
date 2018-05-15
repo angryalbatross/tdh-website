@@ -1,0 +1,29 @@
+{{ partial "header" . }}
+
+<main>
+<div id="content">
+
+      <div class="container-fluid">
+
+          <div class="row">
+              <div class="col-sm-6">
+                <img style="max-width: 100%" src="/img/portfolio/IMG_0062.JPG" class="img-fluid" alt="Alison">
+              </div>
+
+              <div class="col-sm-6">
+
+                  <div>
+                    {{ .Content }}
+                  </div>
+
+              </div>
+
+          </div>
+          <!-- /.row -->
+
+      </div>
+      <!-- /.container -->
+</div>
+</main>
+
+{{ partial "footer" . }}
