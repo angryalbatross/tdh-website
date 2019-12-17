@@ -1,32 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://3rddayhort.github.io/about/</loc>
+    <loc>https://tdhort.com/about/</loc>
   </url>
   
   <url>
-    <loc>https://3rddayhort.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>https://tdhort.com/categories/</loc>
   </url>
   
   <url>
-    <loc>https://3rddayhort.github.io/contact/</loc>
+    <loc>https://tdhort.com/contact/</loc>
   </url>
   
   <url>
-    <loc>https://3rddayhort.github.io/projects/</loc>
+    <loc>https://tdhort.com/projects/</loc>
   </url>
   
   <url>
-    <loc>https://3rddayhort.github.io/tags/</loc>
-    <priority>0</priority>
+    <loc>https://tdhort.com/tags/</loc>
   </url>
   
   <url>
-    <loc>https://3rddayhort.github.io/</loc>
-    <priority>0</priority>
+    <loc>https://tdhort.com/</loc>
   </url>
   
 </urlset>

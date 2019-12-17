@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Third Day Horticulture</title>
-    <link>https://3rddayhort.github.io/</link>
+    <link>https://tdhort.com/</link>
     <description>Recent content on Third Day Horticulture</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="https://3rddayhort.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tdhort.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://3rddayhort.github.io/about/</link>
+      <link>https://tdhort.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://3rddayhort.github.io/about/</guid>
+      <guid>https://tdhort.com/about/</guid>
       <description>About Us! Our founder Alison Burgett is an alumni of the United States Botanic Garden in Washington D.C.
 She has a Masters Degree in Plant Science from Virginia Tech and a Bachelors in Horticulture from Texas A&amp;amp;M.
-Since moving to Tyler, Texas Alison has been creating beautifully designed planter boxes and outdoor pots for East Texas Businesses.</description>
+Since moving to Tyler, Texas Alison has been creating beautifully designed planter boxes and outdoor pots for East Texas Businesses including Christus health, Pine Cove and more</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>https://3rddayhort.github.io/contact/</link>
+      <link>https://tdhort.com/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://3rddayhort.github.io/contact/</guid>
-      <description>Don&amp;rsquo;t be afraid to get our hands dirty! We can help with simple consultation, installation or maintenance of any landscape. Let us create our next floral masterpiece in front of your business!</description>
+      <guid>https://tdhort.com/contact/</guid>
+      <description>Don&#39;t be afraid to get our hands dirty! We can help with simple consultation, installation or maintenance of any landscape. Let us create our next floral masterpiece in front of your business!</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>https://3rddayhort.github.io/projects/</link>
+      <link>https://tdhort.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://3rddayhort.github.io/projects/</guid>
+      <guid>https://tdhort.com/projects/</guid>
       <description>See our work We work very hard to make sure our plants look the best in town!</description>
     </item>
     

@@ -11,4 +11,4 @@ Our founder Alison Burgett is an alumni of the United States Botanic Garden in W
 
 She has a Masters Degree in Plant Science from Virginia Tech and a Bachelors in Horticulture from Texas A&M.
 
-Since moving to Tyler, Texas Alison has been creating beautifully designed planter boxes and outdoor pots for East Texas Businesses.
+Since moving to Tyler, Texas Alison has been creating beautifully designed planter boxes and outdoor pots for East Texas Businesses including Christus health, Pine Cove and more
