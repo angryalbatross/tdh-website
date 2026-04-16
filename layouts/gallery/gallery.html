@@ -1,0 +1,78 @@
+{{ partial "header" . }}
+
+<main id="content">
+
+  <section class="tdh-banner">
+    <div class="tdh-banner__media" style="background-image: url('{{ "img/portfolio/IMG_7687.JPG" | absURL }}');"></div>
+    <div class="tdh-container">
+      <div class="tdh-banner__inner">
+        <span class="eyebrow" style="color: #cfe4d3;">Gallery &middot; East Texas</span>
+        <h1>Selected projects.</h1>
+        <p class="lead">Commercial planter programs, seasonal rotations, and residential container gardens from across Tyler and East Texas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tdh-section">
+    <div class="tdh-container">
+
+      <div class="tdh-filters" id="tdh-filters">
+        <button class="tdh-filter is-active" data-filter="all" type="button">All</button>
+        <button class="tdh-filter" data-filter="Commercial" type="button">Commercial</button>
+        <button class="tdh-filter" data-filter="Residential" type="button">Residential</button>
+        <button class="tdh-filter" data-filter="Seasonal" type="button">Seasonal</button>
+        <button class="tdh-filter" data-filter="Historical" type="button">Historical</button>
+      </div>
+
+      <div class="tdh-gallery" id="tdh-gallery">
+        {{ range (.Site.Data.projects) }}
+          {{- $src := printf "img/portfolio/%s" .img | absURL -}}
+          {{- $tn  := printf "img/portfolio/%s" .preview | absURL -}}
+          <a class="tdh-gallery__tile"
+             data-category="{{ .category | default "Commercial" }}"
+             data-lightbox="1"
+             data-src="{{ $src }}"
+             data-caption="{{ .title }} — {{ .subtitle }}"
+             href="{{ $src }}"
+             style="background-image: url('{{ $tn }}');"
+             aria-label="{{ .title }}">
+            <span class="tdh-gallery__caption">{{ .title }}</span>
+          </a>
+        {{ end }}
+      </div>
+
+    </div>
+  </section>
+
+  <section class="tdh-ctaband">
+    <div class="tdh-container">
+      <h2>Like what you see?</h2>
+      <p class="lead">Tell us about your property. We’ll put together a proposal for your planters.</p>
+      <div class="tdh-ctaband__ctas">
+        <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Consultation</a>
+        <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var filters = document.querySelectorAll('#tdh-filters .tdh-filter');
+  var tiles   = document.querySelectorAll('#tdh-gallery .tdh-gallery__tile');
+  filters.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filters.forEach(function(b){ b.classList.remove('is-active'); });
+      btn.classList.add('is-active');
+      var f = btn.getAttribute('data-filter');
+      tiles.forEach(function(t){
+        var c = t.getAttribute('data-category');
+        t.style.display = (f === 'all' || c === f) ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>
+
+{{ partial "footer" . }}
