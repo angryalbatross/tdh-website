@@ -1,0 +1,49 @@
+<footer class="tdh-footer" role="contentinfo">
+  <div class="tdh-container">
+    <div class="tdh-footer__grid">
+      <div class="tdh-footer__brand">
+        <img src="{{ "logo.png" | absURL }}" alt="Third Day Horticulture">
+        <p>Specialists in container gardens, commercial planters, and seasonal planter rotations for {{ .Site.Params.city }} and greater East Texas.</p>
+        <p><strong>Call:</strong> <a href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a><br>
+           <strong>Email:</strong> <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+      </div>
+
+      <div>
+        <h4>Services</h4>
+        <ul>
+          {{ range .Site.Menus.footerServices }}
+          <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Company</h4>
+        <ul>
+          {{ range .Site.Menus.footerCompany }}
+          <li><a href="{{ .URL | absURL }}">{{ .Name }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div>
+        <h4>Service Area</h4>
+        <ul>
+          <li>Tyler, TX</li>
+          <li>Longview &amp; Lindale</li>
+          <li>Whitehouse, Bullard, Flint</li>
+          <li>Greater East Texas</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tdh-footer__bottom">
+      <span>&copy; {{ now.Year }} Third Day Horticulture. All rights reserved.</span>
+      <span>Tyler, Texas &middot; Horticulturist-owned</span>
+    </div>
+  </div>
+</footer>
+
+{{ partial "js" . }}
+</body>
+</html>

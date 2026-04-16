@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{- $siteTitle := .Site.Title -}}
+  {{- $pageTitle := "" -}}
+  {{- with .Params.metaTitle -}}{{- $pageTitle = . -}}{{- end -}}
+  {{- if not $pageTitle -}}
+    {{- if .IsHome -}}{{- $pageTitle = $siteTitle -}}
+    {{- else -}}{{- $pageTitle = printf "%s | Third Day Horticulture" .Title -}}
+    {{- end -}}
+  {{- end -}}
+  <title>{{ $pageTitle }}</title>
+
+  {{- $desc := .Site.Params.description -}}
+  {{- with .Params.metaDescription -}}{{- $desc = . -}}{{- end -}}
+  {{- with .Description -}}{{- $desc = . -}}{{- end -}}
+  <meta name="description" content="{{ $desc }}">
+  <meta name="author" content="{{ .Site.Params.author }}">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{- $ogImage := .Site.Params.ogImage -}}
+  {{- with .Params.ogImage -}}{{- $ogImage = . -}}{{- end -}}
+  {{- $ogImageURL := absURL $ogImage -}}
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ $pageTitle }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ $ogImageURL }}">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ $pageTitle }}">
+  <meta name="twitter:description" content="{{ $desc }}">
+  <meta name="twitter:image" content="{{ $ogImageURL }}">
+
+  <!-- Geo / local -->
+  <meta name="geo.region" content="US-{{ .Site.Params.regionCode }}">
+  <meta name="geo.placename" content="{{ .Site.Params.city }}, {{ .Site.Params.region }}">
+
+  {{ partial "css" . }}
+  {{ hugo.Generator }}
+  <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
+
+  {{ if .IsHome }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Third Day Horticulture",
+    "image": "{{ $ogImageURL }}",
+    "url": "{{ .Site.BaseURL }}",
+    "telephone": "{{ .Site.Params.phone }}",
+    "email": "{{ .Site.Params.email }}",
+    "description": "{{ .Site.Params.description }}",
+    "areaServed": [
+      {"@type": "City", "name": "Tyler, TX"},
+      {"@type": "City", "name": "Longview, TX"},
+      {"@type": "City", "name": "Lindale, TX"},
+      {"@type": "City", "name": "Whitehouse, TX"},
+      {"@type": "City", "name": "Bullard, TX"},
+      {"@type": "City", "name": "Flint, TX"}
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tyler",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$-$$$",
+    "serviceType": [
+      "Container garden design",
+      "Commercial planter installation",
+      "Seasonal planter rotations",
+      "Planter maintenance"
+    ]
+  }
+  </script>
+  {{ end }}
+</head>
+
+<body>
+  <header class="tdh-nav" role="banner">
+    <div class="tdh-container">
+      <div class="tdh-nav__inner">
+        <a href="{{ "/" | absURL }}" class="tdh-brand" aria-label="Third Day Horticulture home">
+          <img src="{{ "logo.png" | absURL }}" alt="Third Day Horticulture" class="tdh-brand__mark">
+          <span class="tdh-brand__text">
+            Third Day Horticulture
+            <span class="tdh-brand__sub">Tyler, TX</span>
+          </span>
+        </a>
+
+        {{ if .Site.Menus.main }}
+        <nav aria-label="Primary">
+          <ul class="tdh-nav__links">
+            {{ range .Site.Menus.main }}
+              {{ if not .Parent }}
+              <li>
+                <a href="{{ .URL | absURL }}"{{ if eq $.RelPermalink .URL }} class="is-active"{{ end }}>{{ .Name }}</a>
+              </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </nav>
+        {{ end }}
+
+        <div class="tdh-nav__cta">
+          <a class="tdh-nav__phone" href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
+          <a class="tdh-btn tdh-btn--primary" href="{{ "/contact/" | absURL }}">Get a Quote</a>
+          <button class="tdh-nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
