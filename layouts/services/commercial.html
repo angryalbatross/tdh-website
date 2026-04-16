@@ -1,0 +1,81 @@
+{{ partial "header" . }}
+
+<main id="content">
+
+  <section class="tdh-banner">
+    <div class="tdh-banner__media" style="background-image: url('{{ "img/portfolio/IMG_7979.jpeg" | absURL }}');"></div>
+    <div class="tdh-container">
+      <div class="tdh-banner__inner">
+        <span class="eyebrow" style="color: #cfe4d3;">Commercial Planters &middot; Tyler, TX</span>
+        <h1>Commercial planters that read as “premium.”</h1>
+        <p class="lead">We design, install, and maintain container programs for the properties where first impressions are everything — hospitals, country clubs, corporate campuses, and hospitality.</p>
+        <div style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Proposal</a>
+          <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tdh-section">
+    <div class="tdh-container">
+      <div class="tdh-split">
+        <div class="tdh-split__media" style="background-image: url('{{ "img/portfolio/IMG_7687.JPG" | absURL }}');"></div>
+        <div>
+          <span class="eyebrow">What We Do</span>
+          <h2>Full-service container programs for commercial property.</h2>
+          <p>Third Day Horticulture is a specialist studio — we don’t mow, edge, or do bed work. We focus entirely on planters and containers, which is exactly why the planters at the properties we serve don’t look like afterthoughts.</p>
+          <ul class="tdh-checklist">
+            <li>Entryway pots &amp; lobby containers</li>
+            <li>Courtyard, patio, and rooftop planter installs</li>
+            <li>Large-scale pot programs across multi-building campuses</li>
+            <li>Holiday and event planter installs</li>
+            <li>Ongoing maintenance &amp; seasonal rotations</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who we serve -->
+  <section class="tdh-section tdh-section--alt">
+    <div class="tdh-container">
+      <div class="tdh-center tdh-narrow" style="margin-bottom: 48px;">
+        <span class="eyebrow">Who We Serve</span>
+        <h2>Built for high-visibility properties.</h2>
+      </div>
+      <ul class="tdh-segments tdh-grid tdh-grid--3">
+        <li><i class="fa fa-heartbeat tdh-segment__icon"></i><h4>Hospitals &amp; Medical</h4><span class="small">Including work for Christus Trinity Mother Frances Hospital</span></li>
+        <li><i class="fa fa-flag tdh-segment__icon"></i><h4>Country Clubs</h4><span class="small">Clubhouse entries, event spaces, tournament prep</span></li>
+        <li><i class="fa fa-building-o tdh-segment__icon"></i><h4>Corporate Offices</h4><span class="small">Executive entries and campus common areas</span></li>
+        <li><i class="fa fa-briefcase tdh-segment__icon"></i><h4>Hospitality</h4><span class="small">Hotels, retreats, event venues</span></li>
+        <li><i class="fa fa-leaf tdh-segment__icon"></i><h4>Camps &amp; Retreats</h4><span class="small">Including projects for Pine Cove</span></li>
+        <li><i class="fa fa-shopping-bag tdh-segment__icon"></i><h4>Retail &amp; Local Business</h4><span class="small">Boutiques, salons, restaurants</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Why Tyler / East TX -->
+  <section class="tdh-section">
+    <div class="tdh-container tdh-narrow">
+      <span class="eyebrow">Built for East Texas</span>
+      <h2>Plant choices that survive a Tyler summer.</h2>
+      <p>East Texas heat, humidity, and clay-heavy soils chew up inexperienced planter work. We select plant palettes specifically engineered for our climate — so your installations don’t look tired by July. It’s the difference between pots that last a season and pots that make your property look cared for.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="tdh-ctaband">
+    <div class="tdh-container">
+      <h2>Get a commercial planter proposal.</h2>
+      <p class="lead">Send us a note about your property and we’ll schedule a quick walkthrough — usually within the week.</p>
+      <div class="tdh-ctaband__ctas">
+        <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Proposal</a>
+        <a class="tdh-btn tdh-btn--ghost" href="/gallery/">See Commercial Work</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{ partial "footer" . }}

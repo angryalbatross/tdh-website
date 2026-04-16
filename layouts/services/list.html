@@ -1,0 +1,97 @@
+{{ partial "header" . }}
+
+<main id="content">
+
+  <section class="tdh-banner">
+    <div class="tdh-banner__media" style="background-image: url('{{ "img/portfolio/IMG_7687.JPG" | absURL }}');"></div>
+    <div class="tdh-container">
+      <div class="tdh-banner__inner">
+        <span class="eyebrow" style="color: #cfe4d3;">Services</span>
+        <h1>Planter design, installation &amp; maintenance.</h1>
+        <p class="lead">Three core services — commercial, residential, and seasonal rotations — designed and installed by a trained horticulturist in Tyler, Texas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tdh-section">
+    <div class="tdh-container">
+      <div class="tdh-grid tdh-grid--3">
+
+        <a class="tdh-card" href="/services/commercial/">
+          <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/IMG_7979.jpeg" | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Commercial Planters</h3>
+            <p>Entryway pots, courtyard planters, and full container programs for medical campuses, offices, country clubs, and hospitality properties.</p>
+            <span class="tdh-card__link">Learn more</span>
+          </div>
+        </a>
+
+        <a class="tdh-card" href="/services/residential/">
+          <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/EABS8299.JPG" | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Residential Container Gardens</h3>
+            <p>Designed floral pots and patio arrangements for fine homes in Tyler and East Texas — one-time installs or ongoing care.</p>
+            <span class="tdh-card__link">Learn more</span>
+          </div>
+        </a>
+
+        <a class="tdh-card" href="/services/seasonal-rotations/">
+          <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/IMG_0062.JPG" | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Seasonal Rotations</h3>
+            <p>A four-season program keeping your planters fresh: spring color, summer tropicals, fall texture, and winter / holiday installs.</p>
+            <span class="tdh-card__link">Learn more</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="tdh-section tdh-section--alt">
+    <div class="tdh-container">
+      <div class="tdh-center tdh-narrow" style="margin-bottom: 48px;">
+        <span class="eyebrow">How We Work</span>
+        <h2>A simple, four-step process</h2>
+      </div>
+
+      <div class="tdh-grid tdh-grid--4">
+        <div class="tdh-feature">
+          <span class="tdh-feature__num">01</span>
+          <h4>Walkthrough</h4>
+          <p>Quick site visit to measure pots, study light and wind, and understand the property’s character.</p>
+        </div>
+        <div class="tdh-feature">
+          <span class="tdh-feature__num">02</span>
+          <h4>Design &amp; Proposal</h4>
+          <p>A clear plant palette, plan, and transparent proposal — no guesswork, no sticker shock.</p>
+        </div>
+        <div class="tdh-feature">
+          <span class="tdh-feature__num">03</span>
+          <h4>Install</h4>
+          <p>We source healthy plants, install cleanly, and leave the property as tidy as we found it.</p>
+        </div>
+        <div class="tdh-feature">
+          <span class="tdh-feature__num">04</span>
+          <h4>Maintain</h4>
+          <p>Optional ongoing care — deadheading, refreshes, and seasonal rotations so it always looks intentional.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tdh-ctaband">
+    <div class="tdh-container">
+      <h2>Not sure which service fits?</h2>
+      <p class="lead">Tell us about your property. We’ll recommend the right level of service — often less than you expect.</p>
+      <div class="tdh-ctaband__ctas">
+        <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Consultation</a>
+        <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{ partial "footer" . }}
