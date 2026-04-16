@@ -1,5 +1,10 @@
-# *** Warning! Your custom domain is not using HTTPS yet ***
-# These rules will change if you change your site’s custom domains or HTTPS settings
-
+# Netlify redirects
 # Redirect default Netlify subdomain to primary domain
-http://serene-pare-6dd8f0.netlify.com/* http://www.tdhort.com/:splat 301!
+https://serene-pare-6dd8f0.netlify.app/*   https://tdhort.com/:splat   301!
+http://serene-pare-6dd8f0.netlify.com/*    https://tdhort.com/:splat   301!
+
+# Retire old URLs
+/projects      /gallery   301
+/projects/*    /gallery   301
+/portfolio     /gallery   301
+/portfolio/*   /gallery   301
