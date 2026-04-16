@@ -10,8 +10,8 @@
         <h1>A four-season planter program, handled for you.</h1>
         <p class="lead">Your planters look intentional every month of the year — spring color, summer tropicals, fall texture, and bold winter and holiday installs.</p>
         <div style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <a class="tdh-btn tdh-btn--primary" href="/contact/">Start a Rotation Program</a>
-          <a class="tdh-btn tdh-btn--ghost" href="/services/">See all services</a>
+          <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Start a Rotation Program</a>
+          <a class="tdh-btn tdh-btn--ghost" href="{{ "services/" | relURL }}">See all services</a>
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@
       <h2>Enroll your property.</h2>
       <p class="lead">Rotation programs are the easiest way to upgrade the look of a commercial property — and the easiest gift to give a homeowner who loves their pots.</p>
       <div class="tdh-ctaband__ctas">
-        <a class="tdh-btn tdh-btn--primary" href="/contact/">Start a Rotation Program</a>
+        <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Start a Rotation Program</a>
         <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
       </div>
     </div>

@@ -17,7 +17,7 @@
     <div class="tdh-container">
       <div class="tdh-grid tdh-grid--3">
 
-        <a class="tdh-card" href="/services/commercial/">
+        <a class="tdh-card" href="{{ "services/commercial/" | relURL }}">
           <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/IMG_7979.jpeg" | absURL }}');"></div>
           <div class="tdh-card__body">
             <h3>Commercial Planters</h3>
@@ -26,7 +26,7 @@
           </div>
         </a>
 
-        <a class="tdh-card" href="/services/residential/">
+        <a class="tdh-card" href="{{ "services/residential/" | relURL }}">
           <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/EABS8299.JPG" | absURL }}');"></div>
           <div class="tdh-card__body">
             <h3>Residential Container Gardens</h3>
@@ -35,7 +35,7 @@
           </div>
         </a>
 
-        <a class="tdh-card" href="/services/seasonal-rotations/">
+        <a class="tdh-card" href="{{ "services/seasonal-rotations/" | relURL }}">
           <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/IMG_0062.JPG" | absURL }}');"></div>
           <div class="tdh-card__body">
             <h3>Seasonal Rotations</h3>
@@ -86,7 +86,7 @@
       <h2>Not sure which service fits?</h2>
       <p class="lead">Tell us about your property. We’ll recommend the right level of service — often less than you expect.</p>
       <div class="tdh-ctaband__ctas">
-        <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Consultation</a>
+        <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Request a Consultation</a>
         <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
       </div>
     </div>

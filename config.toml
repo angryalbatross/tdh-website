@@ -15,7 +15,7 @@ enableRobotsTXT = true
     region = "Texas"
     regionCode = "TX"
     serviceArea = "Tyler, Longview, Lindale, Whitehouse, Bullard, Flint, and greater East Texas"
-    ogImage = "/img/portfolio/IMG_7687.JPG"
+    ogImage = "img/portfolio/IMG_7687.JPG"
     font = "Inter"
     accent = "#2f5d3a"
 

@@ -10,7 +10,7 @@
         <h1>Commercial planters that read as “premium.”</h1>
         <p class="lead">We design, install, and maintain container programs for the properties where first impressions are everything — hospitals, country clubs, corporate campuses, and hospitality.</p>
         <div style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Proposal</a>
+          <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Request a Proposal</a>
           <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
         </div>
       </div>
@@ -70,8 +70,8 @@
       <h2>Get a commercial planter proposal.</h2>
       <p class="lead">Send us a note about your property and we’ll schedule a quick walkthrough — usually within the week.</p>
       <div class="tdh-ctaband__ctas">
-        <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Proposal</a>
-        <a class="tdh-btn tdh-btn--ghost" href="/gallery/">See Commercial Work</a>
+        <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Request a Proposal</a>
+        <a class="tdh-btn tdh-btn--ghost" href="{{ "gallery/" | relURL }}">See Commercial Work</a>
       </div>
     </div>
   </section>

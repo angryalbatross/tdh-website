@@ -6,5 +6,5 @@ type = "services"
 layout = "residential"
 metaTitle = "Residential Container Gardens & Floral Pots | Tyler, TX"
 metaDescription = "Designed container gardens and floral pots for fine homes in Tyler and East Texas. Front-door arrangements, patio planters, and seasonal refreshes."
-ogImage = "/img/portfolio/EABS8299.JPG"
+ogImage = "img/portfolio/EABS8299.JPG"
 +++

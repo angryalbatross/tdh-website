@@ -10,8 +10,8 @@
         <h1>Floral pots and patio planters designed for your home.</h1>
         <p class="lead">Front doors, pool patios, and back-garden arrangements designed for East Texas and planted to actually thrive — not just look good the week we leave.</p>
         <div style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap;">
-          <a class="tdh-btn tdh-btn--primary" href="/contact/">Book a Consultation</a>
-          <a class="tdh-btn tdh-btn--ghost" href="/gallery/">Browse the gallery</a>
+          <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Book a Consultation</a>
+          <a class="tdh-btn tdh-btn--ghost" href="{{ "gallery/" | relURL }}">Browse the gallery</a>
         </div>
       </div>
     </div>
@@ -69,7 +69,7 @@
       <h2>Ready to refresh your planters?</h2>
       <p class="lead">Spring and holiday slots go fastest — reach out early.</p>
       <div class="tdh-ctaband__ctas">
-        <a class="tdh-btn tdh-btn--primary" href="/contact/">Book a Consultation</a>
+        <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Book a Consultation</a>
         <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
       </div>
     </div>
