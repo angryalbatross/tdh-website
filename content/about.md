@@ -1,14 +1,9 @@
 +++
-title = "About"
+title = "About Third Day Horticulture"
 id = "about"
 type = "about"
 layout = "about"
+metaTitle = "About Third Day Horticulture | Horticulturist-led Planter Design in Tyler, TX"
+metaDescription = "Meet Alison Burgett, founder of Third Day Horticulture. U.S. Botanic Garden alumna and horticulturist designing premium container gardens and commercial planters across East Texas."
+ogImage = "/img/portfolio/IMG_7692.jpeg"
 +++
-
-#  About Us!
-
-Our founder Alison Burgett is an alumni of the United States Botanic Garden in Washington D.C. 
-
-She has a Masters Degree in Plant Science from Virginia Tech and a Bachelors in Horticulture from Texas A&M.
-
-Since moving to Tyler, Texas Alison has been creating beautifully designed planter boxes and outdoor pots for East Texas Businesses including Christus health, Pine Cove and more

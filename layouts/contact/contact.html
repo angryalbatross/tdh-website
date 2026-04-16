@@ -1,79 +1,89 @@
 {{ partial "header" . }}
-<main>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12 text-center">
 
-        <div>
-          {{ .Content }}
-        </div>
+<main id="content">
 
+  <section class="tdh-banner">
+    <div class="tdh-banner__media" style="background-image: url('{{ "img/portfolio/IMG_7687.JPG" | absURL }}');"></div>
+    <div class="tdh-container">
+      <div class="tdh-banner__inner">
+        <span class="eyebrow" style="color: #cfe4d3;">Contact</span>
+        <h1>Let’s plan your planters.</h1>
+        <p class="lead">Commercial property manager, clubhouse, medical campus, or homeowner — tell us what you’re looking at and we’ll send back thoughtful next steps.</p>
       </div>
     </div>
-    <div class="row">
-    <hr/>
-      <div class="col-lg-12">
-        <form  action="//formspree.io/daniel.burgett@gmail.com" method="POST" name="sentMessage" id="contactForm">
+  </section>
 
-          <fieldset>
-            <div class="row row-eq-height">
-              <div class="col-md-6">
-                <!-- gotcha included to prevent spam -->
-                <input type="text" name="_gotcha" style="display:none" />
-                {{ with .Site.Params.contact.form.name }}
-                <div class="form-group">
-                  <input class="form-control" id="name" required type="text" name="name" placeholder="{{ with .text }}{{ .  | markdownify }}{{ end }}" data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}">
-                  <p class="help-block text-danger"></p>
-                </div>
-                {{ end }}
+  <section class="tdh-section">
+    <div class="tdh-container">
+      <div class="tdh-grid tdh-grid--2" style="align-items: start;">
+        <div>
+          <span class="eyebrow">Get in Touch</span>
+          <h2>We respond within one business day.</h2>
+          <p>Share a little about the property, what you currently have, and what you’d like — photos are welcome after we reply.</p>
 
-                {{ with .Site.Params.contact.form.email }}
-                <div class="form-group">
-                  <input class="form-control" id="email" required type="email" name="email" placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}" data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}">
-                  <p class="help-block text-danger"></p>
-                </div>
-                {{ end }}
+          <ul class="tdh-meta" style="margin-top: 32px;">
+            <li>
+              <span class="tdh-meta__label">Call</span>
+              <a href="tel:{{ .Site.Params.phoneHref }}" style="font-size: 1.2rem; font-weight: 600;">{{ .Site.Params.phone }}</a>
+            </li>
+            <li>
+              <span class="tdh-meta__label">Email</span>
+              <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+            </li>
+            <li>
+              <span class="tdh-meta__label">Service Area</span>
+              {{ .Site.Params.serviceArea }}
+            </li>
+            <li>
+              <span class="tdh-meta__label">Typical Engagements</span>
+              One-time installs, seasonal rotation programs, full-service commercial planter programs, residential consultations
+            </li>
+          </ul>
+        </div>
 
-                {{ with .Site.Params.contact.form.phone }}
-                <div class="form-group">
-                  <input class="form-control" id="phone" required type="number" name="phone" placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}" data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}"></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-                {{ end }}
-              </div>
+        <form class="tdh-form" action="https://formspree.io/daniel.burgett@gmail.com" method="POST" id="contactForm" novalidate>
+          <input type="text" name="_gotcha" style="display:none">
 
-              <div class="col-md-6">
-              {{ with .Site.Params.contact.form.message }}
-                <div class="form-group">
-                  <textarea class="form-control" style="min-height: 9em;" id="message" required name="message" placeholder="{{ with .text }}{{ . | markdownify }}{{ end }}" data-validation-error-msg="{{ with .warning }}{{ . | markdownify }}{{ end }}"></textarea>
-                  <p class="help-block text-danger"></p>
-                </div>
-                {{ end }}
+          {{ with .Site.Params.contact.form.name }}
+          <div>
+            <label for="name">{{ .text | markdownify }}</label>
+            <input id="name" required type="text" name="name" placeholder="Jane Smith">
+          </div>
+          {{ end }}
 
-              </div>
-              <div class="clearfix"></div>
-              <div class="col-lg-12 text-center">
-                <div class="text-success" id="success" style="display:none;">
-                  {{ with .Site.Params.contact.thanks }}
-                    {{ . | markdownify }}
-                  {{ else }}
-                    Thank you for contacting us.
-                  {{ end }}
-                </div>
-                <div class="text-danger" id="error" style="display:none;">
-                  {{ with .Site.Params.contact.error }}
-                    {{ . | markdownify }}
-                  {{ else }}
-                    Message could not be sent. Please contact us at {{ (or .Site.Params.contact.email .Site.Params.email) }} instead.
-                  {{ end }}
-                </div><br />
-                <button type="submit" value="Submit" class="btn btn-xl">{{ with .Site.Params.contact.buttonText }}{{ . }}{{ end }}</button>
-              </div>
-            </div>
-          </fieldset>
+          {{ with .Site.Params.contact.form.email }}
+          <div>
+            <label for="email">{{ .text | markdownify }}</label>
+            <input id="email" required type="email" name="email" placeholder="you@company.com">
+          </div>
+          {{ end }}
+
+          {{ with .Site.Params.contact.form.phone }}
+          <div>
+            <label for="phone">{{ .text | markdownify }}</label>
+            <input id="phone" required type="tel" name="phone" placeholder="(903) 555-1234">
+          </div>
+          {{ end }}
+
+          <div>
+            <label for="propertyType">Property Type</label>
+            <input id="propertyType" type="text" name="property_type" placeholder="Hospital, country club, office, home, etc.">
+          </div>
+
+          {{ with .Site.Params.contact.form.message }}
+          <div>
+            <label for="message">{{ .text | markdownify }}</label>
+            <textarea id="message" required name="message" placeholder="We’re replacing the planters at our main entrance…"></textarea>
+          </div>
+          {{ end }}
+
+          <button type="submit" class="tdh-btn tdh-btn--primary">{{ .Site.Params.contact.buttonText }}</button>
+          <small style="color: var(--tdh-muted); font-size: 0.85rem;">By submitting, you agree to be contacted about your inquiry. We never share your info.</small>
         </form>
       </div>
     </div>
-  </div>
+  </section>
+
 </main>
-  {{ partial "footer" . }}
+
+{{ partial "footer" . }}

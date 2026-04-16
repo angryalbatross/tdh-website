@@ -1,29 +1,80 @@
 {{ partial "header" . }}
 
-<main>
-<div id="content">
+<main id="content">
 
-      <div class="container-fluid">
-
-          <div class="row">
-              <div class="col-sm-6">
-                <img style="max-width: 100%" src="/img/portfolio/IMG_0062.JPG" class="img-fluid" alt="Alison">
-              </div>
-
-              <div class="col-sm-6">
-
-                  <div>
-                    {{ .Content }}
-                  </div>
-
-              </div>
-
-          </div>
-          <!-- /.row -->
-
+  <!-- Banner -->
+  <section class="tdh-banner">
+    <div class="tdh-banner__media" style="background-image: url('{{ "img/portfolio/IMG_7692.jpeg" | absURL }}');"></div>
+    <div class="tdh-container">
+      <div class="tdh-banner__inner">
+        <span class="eyebrow" style="color: #cfe4d3;">About</span>
+        <h1>Rooted in horticulture. Grown in Tyler.</h1>
+        <p class="lead">Third Day Horticulture is a specialist planter and container-garden studio serving businesses, medical facilities, country clubs, and fine homes across East Texas.</p>
       </div>
-      <!-- /.container -->
-</div>
+    </div>
+  </section>
+
+  <!-- Founder story -->
+  <section class="tdh-section">
+    <div class="tdh-container">
+      <div class="tdh-split">
+        <div class="tdh-split__media" style="background-image: url('{{ "img/portfolio/IMG_0062.JPG" | absURL }}');"></div>
+        <div>
+          <span class="eyebrow">Founder &amp; Lead Horticulturist</span>
+          <h2>Alison Burgett</h2>
+          <p>Alison is an alumna of the <strong>United States Botanic Garden</strong> in Washington, D.C., where she helped produce horticultural displays for the U.S. Capitol complex. She holds a <strong>Master’s in Plant Science</strong> from Virginia Tech and a <strong>B.S. in Horticulture</strong> from Texas A&amp;M.</p>
+          <p>Since relocating to Tyler, Alison has built Third Day Horticulture into East Texas’s go-to studio for designed container gardens and commercial planter programs — working with Christus health facilities, private clubs, Pine Cove, and select residential clients.</p>
+          <p>Every arrangement we plant is chosen for the specific light, wind, foot traffic, and brand of the property it sits on. That’s the difference between a planter and a <em>designed</em> planter.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="tdh-section tdh-section--alt">
+    <div class="tdh-container">
+      <div class="tdh-grid tdh-grid--3">
+        <div class="tdh-feature">
+          <span class="tdh-feature__num">01</span>
+          <h4>Trained horticulturist</h4>
+          <p>Master’s-level plant science background, not a general landscape crew. Designs are informed by real plant biology.</p>
+        </div>
+        <div class="tdh-feature">
+          <span class="tdh-feature__num">02</span>
+          <h4>Specialists, not generalists</h4>
+          <p>We focus exclusively on planters, pots, and container gardens — so that category is the best part of your property.</p>
+        </div>
+        <div class="tdh-feature">
+          <span class="tdh-feature__num">03</span>
+          <h4>East Texas expertise</h4>
+          <p>Every palette we plant is chosen for the heat, humidity, soil, and light patterns specific to the Tyler region.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Select clients -->
+  <section class="tdh-section">
+    <div class="tdh-container tdh-center tdh-narrow">
+      <span class="eyebrow">Select Clients &amp; Projects</span>
+      <h2>Where you’ve likely seen our work</h2>
+      <p>Christus health campuses &middot; Trinity Mother Frances Hospital &middot; Pine Cove &middot; U.S. Botanic Garden (historical) &middot; U.S. Capitol Grounds (historical) &middot; Private country clubs &middot; Select East Texas residences</p>
+      <p style="margin-top: 22px;"><a class="tdh-btn tdh-btn--outline" href="/gallery/">Browse the gallery</a></p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="tdh-ctaband">
+    <div class="tdh-container">
+      <h2>Let’s talk about your property.</h2>
+      <p class="lead">Tell us about your entrances, patios, or seasonal plans — we’ll help you decide what’s worth doing.</p>
+      <div class="tdh-ctaband__ctas">
+        <a class="tdh-btn tdh-btn--primary" href="/contact/">Request a Consultation</a>
+        <a class="tdh-btn tdh-btn--ghost" href="tel:{{ .Site.Params.phoneHref }}">Call {{ .Site.Params.phone }}</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 {{ partial "footer" . }}
