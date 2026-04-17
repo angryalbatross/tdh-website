@@ -49,22 +49,25 @@
   {{ hugo.Generator }}
   <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
 
-  {{ if .IsHome }}
+  {{/* LocalBusiness schema on every page */}}
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
+    "@id": "{{ .Site.BaseURL }}#business",
     "name": "Third Day Horticulture",
+    "alternateName": "Third Day Horticulture — Container Gardens & Planter Services",
     "image": "{{ $ogImageURL }}",
+    "logo": "{{ "logo.png" | absURL }}",
     "url": "{{ .Site.BaseURL }}",
     "description": "{{ .Site.Params.description }}",
     "areaServed": [
       {"@type": "City", "name": "Tyler, TX"},
-      {"@type": "City", "name": "Longview, TX"},
-      {"@type": "City", "name": "Lindale, TX"},
-      {"@type": "City", "name": "Whitehouse, TX"},
+      {"@type": "City", "name": "Flint, TX"},
       {"@type": "City", "name": "Bullard, TX"},
-      {"@type": "City", "name": "Flint, TX"}
+      {"@type": "City", "name": "Whitehouse, TX"},
+      {"@type": "City", "name": "Lindale, TX"},
+      {"@type": "City", "name": "Longview, TX"}
     ],
     "address": {
       "@type": "PostalAddress",
@@ -75,9 +78,72 @@
     "priceRange": "$$-$$$",
     "serviceType": [
       "Container garden design",
-      "Commercial planter installation",
+      "Commercial planter services",
+      "Residential container gardens",
       "Seasonal planter rotations",
+      "Planter design and installation",
       "Planter maintenance"
+    ]
+  }
+  </script>
+
+  {{/* Service schema for service pages */}}
+  {{ if eq .Section "services" }}
+  {{ if and (not .IsSection) (ne .Kind "section") }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "{{ .Title }}",
+    "provider": { "@id": "{{ .Site.BaseURL }}#business" },
+    "areaServed": [
+      {"@type": "City", "name": "Tyler, TX"},
+      {"@type": "City", "name": "Flint, TX"},
+      {"@type": "City", "name": "Bullard, TX"},
+      {"@type": "City", "name": "Whitehouse, TX"},
+      {"@type": "City", "name": "Lindale, TX"},
+      {"@type": "City", "name": "Longview, TX"}
+    ],
+    "description": "{{ $desc }}",
+    "url": "{{ .Permalink }}"
+  }
+  </script>
+  {{ end }}
+  {{ end }}
+
+  {{/* Breadcrumbs for non-home pages (skip 404) */}}
+  {{ if and (not .IsHome) (ne .Kind "404") (ne .Layout "404") }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"}
+      {{ if .Parent }}{{ with .Parent }}
+      , {"@type": "ListItem", "position": 2, "name": "{{ .Title }}", "item": "{{ .Permalink }}"},
+        {"@type": "ListItem", "position": 3, "name": "{{ $.Title }}", "item": "{{ $.Permalink }}"}
+      {{ end }}{{ else }}
+      , {"@type": "ListItem", "position": 2, "name": "{{ .Title }}", "item": "{{ .Permalink }}"}
+      {{ end }}
+    ]
+  }
+  </script>
+  {{ end }}
+
+  {{/* FAQPage schema when the page declares FAQs in front matter */}}
+  {{ with .Params.faq }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {{ range $i, $item := . }}{{ if $i }},{{ end }}
+      {
+        "@type": "Question",
+        "name": {{ .q | jsonify | safeJS }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ .a | jsonify | safeJS }} }
+      }
+      {{ end }}
     ]
   }
   </script>
