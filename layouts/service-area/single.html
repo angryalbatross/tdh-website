@@ -1,0 +1,74 @@
+{{ partial "header" . }}
+
+<main id="content">
+
+  <section class="tdh-banner">
+    <div class="tdh-banner__media" style="background-image: url('{{ (.Params.heroImage | default .Params.ogImage | default "img/portfolio/IMG_7687.JPG") | absURL }}');"></div>
+    <div class="tdh-container">
+      <div class="tdh-banner__inner">
+        <span class="eyebrow" style="color: #cfe4d3;">{{ .Params.eyebrow | default "Service Area · East Texas" }}</span>
+        <h1>{{ .Params.h1 | default .Title }}</h1>
+        {{ with .Params.heroLead }}<p class="lead">{{ . | markdownify }}</p>{{ end }}
+        <div style="margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap;">
+          <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Request a Consultation</a>
+          <a class="tdh-btn tdh-btn--ghost" href="{{ "gallery/" | relURL }}">Browse the Gallery</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tdh-section">
+    <div class="tdh-container tdh-narrow">
+      {{ .Content }}
+    </div>
+  </section>
+
+  <section class="tdh-section tdh-section--alt">
+    <div class="tdh-container">
+      <div class="tdh-center tdh-narrow" style="margin-bottom: 48px;">
+        <span class="eyebrow">Services in {{ .Params.city | default .Title }}</span>
+        <h2>All of our planter services, locally.</h2>
+      </div>
+      <div class="tdh-grid tdh-grid--3">
+        <a class="tdh-card" href="{{ "services/commercial/" | relURL }}">
+          <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/IMG_7979.jpeg" | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Commercial Planter Services</h3>
+            <p>Business entrance planters, office planters, and full commercial container programs.</p>
+            <span class="tdh-card__link">Commercial planter services</span>
+          </div>
+        </a>
+        <a class="tdh-card" href="{{ "services/residential/" | relURL }}">
+          <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/EABS8299.JPG" | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Residential Container Gardens</h3>
+            <p>Custom outdoor planters, porch planters, and patio pots for fine homes.</p>
+            <span class="tdh-card__link">Residential container gardens</span>
+          </div>
+        </a>
+        <a class="tdh-card" href="{{ "services/seasonal-rotations/" | relURL }}">
+          <div class="tdh-card__img" style="background-image: url('{{ "img/portfolio/IMG_0062.JPG" | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Seasonal Planter Rotations</h3>
+            <p>Seasonal flower pots and seasonal color — spring, summer, fall, and holiday installs.</p>
+            <span class="tdh-card__link">Seasonal planter rotations</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="tdh-ctaband">
+    <div class="tdh-container">
+      <h2>{{ .Params.ctaHeadline | default (printf "Serving %s and East Texas." (.Params.city | default .Title)) }}</h2>
+      <p class="lead">Tell us about your property and we’ll put together a proposal — typically within one business day.</p>
+      <div class="tdh-ctaband__ctas">
+        <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Request a Consultation</a>
+        <a class="tdh-btn tdh-btn--ghost" href="{{ "service-area/" | relURL }}">All service areas</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{{ partial "footer" . }}
