@@ -57,8 +57,6 @@
     "name": "Third Day Horticulture",
     "image": "{{ $ogImageURL }}",
     "url": "{{ .Site.BaseURL }}",
-    "telephone": "{{ .Site.Params.phone }}",
-    "email": "{{ .Site.Params.email }}",
     "description": "{{ .Site.Params.description }}",
     "areaServed": [
       {"@type": "City", "name": "Tyler, TX"},
@@ -113,7 +111,6 @@
         {{ end }}
 
         <div class="tdh-nav__cta">
-          <a class="tdh-nav__phone" href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a>
           <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | absURL }}">Get a Quote</a>
           <button class="tdh-nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
             <span></span><span></span><span></span>

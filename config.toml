@@ -8,9 +8,6 @@ enableRobotsTXT = true
     author = "Third Day Horticulture"
     description = "Third Day Horticulture designs, installs, and maintains premium container gardens, commercial planters, and seasonal planter rotations for businesses, medical facilities, country clubs, and homes across Tyler and East Texas."
     tagline = "Premium container gardens and commercial planters for Tyler & East Texas."
-    phone = "903-283-5379"
-    phoneHref = "+19032835379"
-    email = "alison@tdhort.com"
     city = "Tyler"
     region = "Texas"
     regionCode = "TX"
@@ -92,9 +89,8 @@ enableRobotsTXT = true
 # Contact form
 [params.contact]
     buttonText = "Request a Consultation"
-    email = "alison@tdhort.com"
     thanks = "Thanks — we received your request and will respond within one business day."
-    error  = "Message could not be sent. Please call us at 903-283-5379."
+    error  = "Message could not be sent. Please try again shortly."
 
 [params.contact.form.name]
     text = "Full Name *"
@@ -105,8 +101,8 @@ enableRobotsTXT = true
     warning = "Please enter a valid email."
 
 [params.contact.form.phone]
-    text = "Phone *"
-    warning = "Please enter your phone number."
+    text = "Phone (optional)"
+    warning = "Please enter a valid phone number."
 
 [params.contact.form.message]
     text = "Tell us about your property and what you're looking for *"

@@ -4,8 +4,7 @@
       <div class="tdh-footer__brand">
         <img src="{{ "logo.png" | absURL }}" alt="Third Day Horticulture">
         <p>Specialists in container gardens, commercial planters, and seasonal planter rotations for {{ .Site.Params.city }} and greater East Texas.</p>
-        <p><strong>Call:</strong> <a href="tel:{{ .Site.Params.phoneHref }}">{{ .Site.Params.phone }}</a><br>
-           <strong>Email:</strong> <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></p>
+        <p><a class="tdh-btn tdh-btn--outline" href="{{ "contact/" | absURL }}" style="color: var(--tdh-white) !important; border-color: rgba(255,255,255,0.6);">Request a Consultation</a></p>
       </div>
 
       <div>
