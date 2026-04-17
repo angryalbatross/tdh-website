@@ -14,12 +14,25 @@ hugo --minify
 
 - `/` Home
 - `/services/` Services (overview)
-  - `/services/commercial/`
-  - `/services/residential/`
-  - `/services/seasonal-rotations/`
-- `/about/` About
+  - `/services/commercial/` — Commercial Planter Services in Tyler, TX
+  - `/services/residential/` — Residential Container Gardens in Tyler, TX
+  - `/services/seasonal-rotations/` — Seasonal Planter Rotations in Tyler, TX
+  - `/services/planter-design/` — Planter Design & Installation in Tyler, TX
 - `/gallery/` Gallery (`/projects/` redirects here)
+- `/service-area/` Service Area
+  - `/service-area/tyler/`
+  - `/service-area/flint/`
+  - `/service-area/bullard/`
+  - `/service-area/whitehouse/`
+  - `/service-area/lindale/`
+- `/about/` About
 - `/contact/` Contact
+
+## SEO
+
+- Every page has page-specific `metaTitle` and `metaDescription`.
+- Every page renders `LocalBusiness` JSON-LD; non-home pages add `BreadcrumbList`; service pages add `Service`; three service pages add `FAQPage` (commercial, residential, seasonal rotations).
+- Primary keyword targets by page are documented in `.github/PREVIEWS.md`? No — they're naturally embedded in H1s, intro copy, card text, and internal links. See the PR description for the keyword map.
 
 ## Project structure
 
