@@ -1,5 +1,5 @@
 +++
-title = "Third Day Horticulture | Container Gardens & Commercial Planters in Tyler, TX"
-metaTitle = "Third Day Horticulture | Container Gardens & Commercial Planters in Tyler, TX"
-metaDescription = "Premium container gardens, commercial planters, and seasonal planter rotations in Tyler and East Texas. Horticulturist-led design, installation, and maintenance."
+title = "Container Gardens & Planter Services in Tyler, TX | Third Day Horticulture"
+metaTitle = "Container Gardens & Planter Services in Tyler, TX | Third Day Horticulture"
+metaDescription = "Container gardens, planters, and floral pots in Tyler, TX. Commercial and residential container gardens, custom planter design, and seasonal planter rotations across East Texas."
 +++

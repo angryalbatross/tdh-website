@@ -1,13 +1,13 @@
 baseURL = "https://tdhort.com/"
 languageCode = "en-us"
-title = "Third Day Horticulture | Container Gardens & Commercial Planters in Tyler, TX"
+title = "Container Gardens & Planter Services in Tyler, TX | Third Day Horticulture"
 theme = "minimal"
 enableRobotsTXT = true
 
 [params]
     author = "Third Day Horticulture"
-    description = "Third Day Horticulture designs, installs, and maintains premium container gardens, commercial planters, and seasonal planter rotations for businesses, medical facilities, country clubs, and homes across Tyler and East Texas."
-    tagline = "Premium container gardens and commercial planters for Tyler & East Texas."
+    description = "Container gardens, commercial planters, floral pots, and seasonal planter rotations in Tyler, TX and East Texas. Horticulturist-led design, installation, and maintenance for businesses and homes."
+    tagline = "Container gardens, commercial planters, and seasonal planter rotations in Tyler, TX."
     city = "Tyler"
     region = "Texas"
     regionCode = "TX"
@@ -41,9 +41,20 @@ enableRobotsTXT = true
     weight = 13
 
 [[menu.main]]
+    name = "Planter Design"
+    parent = "Services"
+    url    = "/services/planter-design/"
+    weight = 14
+
+[[menu.main]]
     name = "Gallery"
     url  = "/gallery/"
     weight = 20
+
+[[menu.main]]
+    name = "Service Area"
+    url  = "/service-area/"
+    weight = 25
 
 [[menu.main]]
     name = "About"
@@ -69,9 +80,13 @@ enableRobotsTXT = true
     url  = "/services/seasonal-rotations/"
     weight = 3
 [[menu.footerServices]]
+    name = "Planter Design & Installation"
+    url  = "/services/planter-design/"
+    weight = 4
+[[menu.footerServices]]
     name = "All Services"
     url  = "/services/"
-    weight = 4
+    weight = 5
 
 [[menu.footerCompany]]
     name = "About"
@@ -82,9 +97,13 @@ enableRobotsTXT = true
     url  = "/gallery/"
     weight = 2
 [[menu.footerCompany]]
+    name = "Service Area"
+    url  = "/service-area/"
+    weight = 3
+[[menu.footerCompany]]
     name = "Contact"
     url  = "/contact/"
-    weight = 3
+    weight = 4
 
 # Contact form
 [params.contact]
