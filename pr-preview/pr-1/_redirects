@@ -1,0 +1,10 @@
+# Netlify redirects
+# Redirect default Netlify subdomain to primary domain
+https://serene-pare-6dd8f0.netlify.app/*   https://www.tdhort.com/:splat   301!
+http://serene-pare-6dd8f0.netlify.com/*    https://www.tdhort.com/:splat   301!
+
+# Retire old URLs
+/projects      /gallery   301
+/projects/*    /gallery   301
+/portfolio     /gallery   301
+/portfolio/*   /gallery   301
