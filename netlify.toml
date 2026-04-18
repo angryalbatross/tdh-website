@@ -1,0 +1,47 @@
+# Netlify build configuration for Third Day Horticulture (tdhort.com).
+#
+# Mirrors the Build & Deploy settings in the Netlify dashboard and adds a
+# Hugo version pin so future Netlify build-image updates can't silently
+# change how the site is built.
+
+[build]
+  publish = "public"
+  command = "hugo --minify"
+
+[build.environment]
+  HUGO_VERSION = "0.123.7"
+  # Hugo extended is required for our SCSS-capable features / future-proofing.
+  HUGO_ENV = "production"
+
+# Sensible default for pull-request Deploy Previews — same build, but
+# without the --minify flag so diffs between builds stay easy to read.
+[context.deploy-preview.environment]
+  HUGO_ENV = "preview"
+
+[context.deploy-preview]
+  command = "hugo"
+
+# Basic security + caching headers. These apply at the Netlify edge;
+# static assets keep a long cache lifetime while HTML stays fresh.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "interest-cohort=()"
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
