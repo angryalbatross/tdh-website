@@ -1,66 +1,140 @@
-baseURL = "https://tdhort.com/"
+baseURL = "https://www.tdhort.com/"
 languageCode = "en-us"
-title = "Third Day Horticulture"
+title = "Container Gardens & Planter Services in Tyler, TX | Third Day Horticulture"
 theme = "minimal"
+enableRobotsTXT = true
 
 [params]
-    author = "Dan Burgett"
-    tagline = "We are dedicated to helping businesses and residents of Tyler create beautiful floral pots and planters."
-    githubUsername = ""
-    accent = "green"
-    showBorder = true
-    backgroundColor = "white"
-    font = "Raleway" # should match the name on Google Fonts!
+    author = "Third Day Horticulture"
+    description = "Container gardens, commercial planters, floral pots, and seasonal planter rotations in Tyler, TX and East Texas. Horticulturist-led design, installation, and maintenance for businesses and homes."
+    tagline = "Container gardens, commercial planters, and seasonal planter rotations in Tyler, TX."
+    city = "Tyler"
+    region = "Texas"
+    regionCode = "TX"
+    serviceArea = "Tyler, Longview, Lindale, Whitehouse, Bullard, Flint, and greater East Texas"
+    ogImage = "img/portfolio/GLWP8758.JPG"
+    font = "Inter"
+    accent = "#2f5d3a"
+
+# Primary navigation
+[[menu.main]]
+    name = "Services"
+    url  = "/services/"
+    weight = 10
 
 [[menu.main]]
-    name = "Home"
-    url  = "/"
-    weight = 1
+    name = "Commercial"
+    parent = "Services"
+    url    = "/services/commercial/"
+    weight = 11
 
 [[menu.main]]
-    name = "Contact"
-    url  = "/contact/"
-    weight = 2
+    name = "Residential"
+    parent = "Services"
+    url    = "/services/residential/"
+    weight = 12
 
 [[menu.main]]
-    name = "Projects"
-    url  = "/projects/"
-    weight = 3
+    name = "Seasonal Rotations"
+    parent = "Services"
+    url    = "/services/seasonal-rotations/"
+    weight = 13
+
+[[menu.main]]
+    name = "Planter Design"
+    parent = "Services"
+    url    = "/services/planter-design/"
+    weight = 14
+
+[[menu.main]]
+    name = "Gallery"
+    url  = "/gallery/"
+    weight = 20
+
+[[menu.main]]
+    name = "Service Area"
+    url  = "/service-area/"
+    weight = 25
 
 [[menu.main]]
     name = "About"
     url  = "/about/"
+    weight = 30
+
+[[menu.main]]
+    name = "Contact"
+    url  = "/contact/"
+    weight = 40
+
+# Footer groups
+[[menu.footerServices]]
+    name = "Commercial Planters"
+    url  = "/services/commercial/"
+    weight = 1
+[[menu.footerServices]]
+    name = "Residential Container Gardens"
+    url  = "/services/residential/"
+    weight = 2
+[[menu.footerServices]]
+    name = "Seasonal Planter Rotations"
+    url  = "/services/seasonal-rotations/"
+    weight = 3
+[[menu.footerServices]]
+    name = "Planter Design & Installation"
+    url  = "/services/planter-design/"
+    weight = 4
+[[menu.footerServices]]
+    name = "All Services"
+    url  = "/services/"
+    weight = 5
+
+[[menu.footerCompany]]
+    name = "About"
+    url  = "/about/"
+    weight = 1
+[[menu.footerCompany]]
+    name = "Gallery"
+    url  = "/gallery/"
+    weight = 2
+[[menu.footerCompany]]
+    name = "Service Area"
+    url  = "/service-area/"
+    weight = 3
+[[menu.footerCompany]]
+    name = "Contact"
+    url  = "/contact/"
     weight = 4
 
-#contact setion
+# Contact form
 [params.contact]
-    buttonText = "Send message"
-# 'warning' defines error messages for invalid inputs
+    buttonText = "Request a Consultation"
+    thanks = "Thanks — we received your request and will respond within one business day."
+    error  = "Message could not be sent. Please try again shortly."
+
 [params.contact.form.name]
-  text = "Your Name *"
-  warning = "Please enter your name."
+    text = "Full Name *"
+    warning = "Please enter your name."
 
 [params.contact.form.email]
-  text = "Your Email *"
-  warning = "Please enter your email address."
+    text = "Email *"
+    warning = "Please enter a valid email."
 
 [params.contact.form.phone]
-  text = "Your Phone *"
-  warning = "Please enter your phone number."
+    text = "Phone (optional)"
+    warning = "Please enter a valid phone number."
 
 [params.contact.form.message]
-  text = "Your Message *"
-  warning = "Please enter a message."
+    text = "Tell us about your property and what you're looking for *"
+    warning = "Please add a short message."
 
-# Portfolio section
+# Portfolio
 [params.portfolio]
-  enable = true
-  # All projects defined in their own files. You can find example projects
-  # at 'exampleSite/data/projects'. Copy the 'projects' folder into the 'data' directory
-  # at the root of this Hugo site.
-  # For more informtion take a look at the README.
-  title = "Portfolio"
-  subtitle = "Below are some examples of our work"
+    enable = true
+    title = "Selected Projects"
+    subtitle = "A sampling of container gardens, commercial planters, and seasonal installations across East Texas."
 
-  [params.portfolio.modal]
-    buttonText = "Close"
+    [params.portfolio.modal]
+        buttonText = "Close"
+
+[markup.goldmark.renderer]
+    unsafe = true

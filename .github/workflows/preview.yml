@@ -1,0 +1,66 @@
+name: PR Preview
+
+# Builds the Hugo site for the PR and deploys it to GitHub Pages on this
+# repo at /pr-preview/pr-<N>/.
+#
+# This is intentionally *independent* from production:
+#   - Production (tdhort.com) is served via CloudFront from a separate
+#     GitHub Pages origin and is not touched by this workflow.
+#   - Previews are served from this repo's own GitHub Pages project site
+#     (https://<owner>.github.io/<repo>/pr-preview/pr-<N>/).
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: pr-preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    # Skip forks (forks can't push to gh-pages without extra setup).
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out PR source
+        if: github.event.action != 'closed'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+          submodules: recursive
+
+      - name: Set up Hugo
+        if: github.event.action != 'closed'
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.123.7"
+          extended: true
+
+      - name: Build preview site
+        if: github.event.action != 'closed'
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          OWNER: ${{ github.repository_owner }}
+          REPO: ${{ github.event.repository.name }}
+        run: |
+          rm -rf public
+          BASE_URL="https://${OWNER}.github.io/${REPO}/pr-preview/pr-${PR_NUMBER}/"
+          echo "Building with baseURL=${BASE_URL}"
+          hugo --minify --baseURL "${BASE_URL}"
+          # Make sure the preview Pages origin doesn't try to claim the
+          # production custom domain.
+          rm -f public/CNAME
+          touch public/.nojekyll
+
+      - name: Deploy preview to gh-pages/pr-preview/pr-<N>/
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./public
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto

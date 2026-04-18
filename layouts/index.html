@@ -1,53 +1,170 @@
 {{ partial "header" . }}
 
-<main style="margin-top:0; padding-top:0;">
+{{/* Image helpers */}}
+{{- $heroImg       := "img/portfolio/GLWP8758.JPG" -}}
+{{- $serviceCom    := "img/portfolio/IMG_7979.jpeg" -}}
+{{- $serviceRes    := "img/portfolio/EABS8299.JPG" -}}
+{{- $serviceSeason := "img/portfolio/IMG_0062.JPG" -}}
+{{- $aboutImg      := "img/portfolio/IMG_7692.jpeg" -}}
 
-    <!-- <div class="intro"> -->
+<main id="content">
 
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-sm-12">
-            <img src="logo.png" class="img-fluid" alt="TDH Logo">
-          </div>
+  <!-- HERO -->
+  <section class="tdh-hero">
+    <div class="tdh-hero__media" style="background-image: url('{{ $heroImg | absURL }}');"></div>
+    <div class="tdh-container">
+      <div class="tdh-hero__inner">
+        <span class="eyebrow tdh-hero__eyebrow">Tyler, Texas &middot; Serving East Texas</span>
+        <h1>Container gardens &amp; planter services in Tyler, TX.</h1>
+        <p class="lead">Third Day Horticulture designs, installs, and maintains container gardens, commercial planters, and seasonal planter rotations for businesses and homes across Tyler and East Texas.</p>
+        <div class="tdh-hero__ctas">
+          <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Request a Consultation</a>
+          <a class="tdh-btn tdh-btn--ghost" href="{{ "gallery/" | relURL }}">See Our Work</a>
         </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <h1>{{ .Site.Title }}</h1>
-          </div>
-        </div>
-        <div class="row" >
-          <hr>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <p>{{ markdownify .Site.Params.Tagline }}</p>
-          </div>
-        </div>
-        <div class="row" >
-          <hr>
-        </div>
-        <div class="row">
-          <div class="col-xs-4">
-              <a class="btn btn-outline-success" style="margin-top: 0.2em; border-color: green" href="/contact/" role="button">Contact</a>
-          </div>
-          <div class="col-xs-4">
-              <a class="btn btn-outline-success" style="margin-top: 0.2em; border-color: green" href="/projects/" role="button">Portfolio</a>
-          </div>
-          <div class="col-xs-4">
-              <a class="btn btn-outline-success" style="margin-top: 0.2em; border-color: green" href="/about/" role="button">About</a>
-          </div>
-        </div>
-        <!-- <div class="row">
-          <div class="col-sm-8">
-            <img style="max-width: 20em" src="/img/portfolio/IMG_0062.JPG" class="img-fluid" alt="Alison">
-          </div>
-          <div class="col-sm-4">
-            <p>{{ markdownify .Site.Params.Description }}</p>
-          </div>
-        </div> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <section class="tdh-trustbar">
+    <div class="tdh-container">
+      <div class="tdh-trustbar__inner">
+        <span><strong>Horticulturist-Owned</strong></span>
+        <span>Serving Tyler &amp; East Texas</span>
+        <span>Country Clubs &middot; Hospitals &middot; Offices</span>
+        <span>Commercial &amp; Residential</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="tdh-section" id="services">
+    <div class="tdh-container">
+      <div class="tdh-center tdh-narrow" style="margin-bottom: clamp(32px, 5vw, 56px);">
+        <span class="eyebrow">Planter Services in Tyler, TX</span>
+        <h2>Container gardens, commercial planters, and seasonal color</h2>
+        <p class="lead">We are planter specialists — not a generic landscape company. Every container garden and planter is designed by a trained horticulturist for your light, scale, and brand.</p>
       </div>
 
-    <!-- </div> -->
+      <div class="tdh-grid tdh-grid--3">
+        <a class="tdh-card" href="{{ "services/commercial/" | relURL }}" aria-label="Commercial planter services in Tyler, TX">
+          <div class="tdh-card__img" style="background-image: url('{{ $serviceCom | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Commercial Planters</h3>
+            <p>Business entrance planters, office planters, and full container programs for hospitals, country clubs, and commercial properties in Tyler and East Texas.</p>
+            <span class="tdh-card__link">Commercial planter services</span>
+          </div>
+        </a>
+
+        <a class="tdh-card" href="{{ "services/residential/" | relURL }}" aria-label="Residential container gardens in Tyler, TX">
+          <div class="tdh-card__img" style="background-image: url('{{ $serviceRes | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Residential Container Gardens</h3>
+            <p>Porch planters, patio pots, and custom outdoor planters for fine homes in Tyler, TX — designed, installed, and optionally maintained year-round.</p>
+            <span class="tdh-card__link">Residential container gardens</span>
+          </div>
+        </a>
+
+        <a class="tdh-card" href="{{ "services/seasonal-rotations/" | relURL }}" aria-label="Seasonal planter rotations in Tyler, TX">
+          <div class="tdh-card__img" style="background-image: url('{{ $serviceSeason | absURL }}');"></div>
+          <div class="tdh-card__body">
+            <h3>Seasonal Planter Rotations</h3>
+            <p>Seasonal color and seasonal flower pots — spring, summer, fall, and holiday planters on a scheduled four-season rotation program.</p>
+            <span class="tdh-card__link">Seasonal planter rotations</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SERVE -->
+  <section class="tdh-section tdh-section--alt">
+    <div class="tdh-container">
+      <div class="tdh-center tdh-narrow" style="margin-bottom: clamp(32px, 5vw, 56px);">
+        <span class="eyebrow">Who We Serve</span>
+        <h2>Trusted by East Texas’s most visible properties</h2>
+        <p class="lead">From the front doors of regional hospitals to the clubhouse at a country club, we create the first impression visitors see.</p>
+      </div>
+
+      <ul class="tdh-segments tdh-grid tdh-grid--6">
+        <li><i class="fa fa-flag tdh-segment__icon"></i><h4>Country Clubs</h4><span class="small">Clubhouse &amp; event entry</span></li>
+        <li><i class="fa fa-heartbeat tdh-segment__icon"></i><h4>Hospitals</h4><span class="small">Main lobbies &amp; courtyards</span></li>
+        <li><i class="fa fa-stethoscope tdh-segment__icon"></i><h4>Medical Facilities</h4><span class="small">Clinics &amp; outpatient</span></li>
+        <li><i class="fa fa-building-o tdh-segment__icon"></i><h4>Offices</h4><span class="small">Corporate campuses</span></li>
+        <li><i class="fa fa-briefcase tdh-segment__icon"></i><h4>Local Businesses</h4><span class="small">Retail &amp; hospitality</span></li>
+        <li><i class="fa fa-home tdh-segment__icon"></i><h4>Fine Homes</h4><span class="small">Select residential clients</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT / WHY US SPLIT -->
+  <section class="tdh-section">
+    <div class="tdh-container">
+      <div class="tdh-split">
+        <div class="tdh-split__media" style="background-image: url('{{ $aboutImg | absURL }}');"></div>
+        <div>
+          <span class="eyebrow">Why Third Day</span>
+          <h2>Horticulturist-led planter design in East Texas.</h2>
+          <p>Third Day Horticulture is led by Alison Burgett — an alumna of the U.S. Botanic Garden with a Master’s in Plant Science from Virginia Tech and a B.S. in Horticulture from Texas A&amp;M. Every container garden and planter we install is rooted in real horticultural training, not seasonal guesswork.</p>
+          <ul class="tdh-checklist">
+            <li>Planter specialists — container gardens, floral pots, and commercial planters, not generic landscaping</li>
+            <li>Plant palettes designed for East Texas sun, humidity, and soil</li>
+            <li>Custom planter design, installation, and ongoing maintenance</li>
+            <li>Four-season planter rotation programs for businesses and homes</li>
+            <li>Serving Tyler, Flint, Bullard, Whitehouse, Lindale, Longview, and greater East Texas</li>
+          </ul>
+          <p style="margin-top: 22px;"><a class="tdh-btn tdh-btn--outline" href="{{ "about/" | relURL }}">Meet Third Day Horticulture</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY PREVIEW -->
+  <section class="tdh-section tdh-section--alt" id="gallery-preview">
+    <div class="tdh-container">
+      <div class="tdh-center tdh-narrow" style="margin-bottom: clamp(24px, 4vw, 40px);">
+        <span class="eyebrow">Selected Work</span>
+        <h2>A glimpse of recent projects</h2>
+      </div>
+
+      <div class="tdh-gallery">
+        {{- $previews := slice "IMG_7687.JPG" "IMG_7739.JPG" "IMG_7979.jpeg" "IMG_7682.JPG" "IMG_7731.JPG" "EABS8299.JPG" -}}
+        {{- range $previews }}
+          {{- $src := printf "img/portfolio/%s" . | absURL -}}
+        <a class="tdh-gallery__tile" href="{{ "gallery/" | relURL }}" style="background-image: url('{{ $src }}');" aria-label="View gallery"></a>
+        {{- end }}
+      </div>
+
+      <div class="tdh-center" style="margin-top: 36px;">
+        <a class="tdh-btn tdh-btn--outline" href="{{ "gallery/" | relURL }}">View the full gallery</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL / CREDENTIAL BAND -->
+  <section class="tdh-section">
+    <div class="tdh-container tdh-narrow tdh-center">
+      <p class="tdh-quote">
+        We wanted the front of our building to feel like it belonged somewhere far more expensive than East Texas. Alison’s planters do exactly that — every season.
+        <span class="tdh-quote__attr">— Facilities Manager, Tyler-area medical campus</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="tdh-ctaband">
+    <div class="tdh-container">
+      <span class="eyebrow">Ready to start?</span>
+      <h2>Let’s plan your container gardens.</h2>
+      <p class="lead tdh-narrow" style="margin-left:auto; margin-right:auto;">
+        Whether you need a one-time planter installation in Tyler, a seasonal planter rotation program, or a full commercial container program across a property, we’d love to hear about it. We respond within one business day.
+      </p>
+      <div class="tdh-ctaband__ctas">
+        <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | relURL }}">Request a Consultation</a>
+        <a class="tdh-btn tdh-btn--ghost" href="{{ "gallery/" | relURL }}">See Our Work</a>
+      </div>
+    </div>
+  </section>
 
 </main>
 

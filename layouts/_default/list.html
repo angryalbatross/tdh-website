@@ -1,0 +1,17 @@
+{{ partial "header" . }}
+
+<main id="content">
+  <section class="tdh-section">
+    <div class="tdh-container tdh-narrow">
+      <h1>{{ .Title }}</h1>
+      {{ .Content }}
+      <ul>
+        {{ range .Pages }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+</main>
+
+{{ partial "footer" . }}

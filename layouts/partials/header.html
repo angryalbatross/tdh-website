@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {{- $siteTitle := .Site.Title -}}
+  {{- $pageTitle := "" -}}
+  {{- with .Params.metaTitle -}}{{- $pageTitle = . -}}{{- end -}}
+  {{- if not $pageTitle -}}
+    {{- if .IsHome -}}{{- $pageTitle = $siteTitle -}}
+    {{- else -}}{{- $pageTitle = printf "%s | Third Day Horticulture" .Title -}}
+    {{- end -}}
+  {{- end -}}
+  <title>{{ $pageTitle }}</title>
+
+  {{- $desc := .Site.Params.description -}}
+  {{- with .Params.metaDescription -}}{{- $desc = . -}}{{- end -}}
+  {{- with .Description -}}{{- $desc = . -}}{{- end -}}
+  <meta name="description" content="{{ $desc }}">
+  <meta name="author" content="{{ .Site.Params.author }}">
+
+  <link rel="canonical" href="{{ .Permalink }}">
+
+  {{- $ogImage := .Site.Params.ogImage -}}
+  {{- with .Params.ogImage -}}{{- $ogImage = . -}}{{- end -}}
+  {{- $ogImageURL := absURL $ogImage -}}
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="{{ .Site.Title }}">
+  <meta property="og:title" content="{{ $pageTitle }}">
+  <meta property="og:description" content="{{ $desc }}">
+  <meta property="og:url" content="{{ .Permalink }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ $ogImageURL }}">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ $pageTitle }}">
+  <meta name="twitter:description" content="{{ $desc }}">
+  <meta name="twitter:image" content="{{ $ogImageURL }}">
+
+  <!-- Geo / local -->
+  <meta name="geo.region" content="US-{{ .Site.Params.regionCode }}">
+  <meta name="geo.placename" content="{{ .Site.Params.city }}, {{ .Site.Params.region }}">
+
+  {{ partial "css" . }}
+  {{ hugo.Generator }}
+  <link rel="shortcut icon" href="{{ "favicon.ico" | absURL }}" type="image/x-icon">
+
+  {{/* LocalBusiness schema on every page */}}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "{{ .Site.BaseURL }}#business",
+    "name": "Third Day Horticulture",
+    "alternateName": "Third Day Horticulture — Container Gardens & Planter Services",
+    "image": "{{ $ogImageURL }}",
+    "logo": "{{ "logo.png" | absURL }}",
+    "url": "{{ .Site.BaseURL }}",
+    "description": "{{ .Site.Params.description }}",
+    "areaServed": [
+      {"@type": "City", "name": "Tyler, TX"},
+      {"@type": "City", "name": "Flint, TX"},
+      {"@type": "City", "name": "Bullard, TX"},
+      {"@type": "City", "name": "Whitehouse, TX"},
+      {"@type": "City", "name": "Lindale, TX"},
+      {"@type": "City", "name": "Longview, TX"}
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Tyler",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "priceRange": "$$-$$$",
+    "serviceType": [
+      "Container garden design",
+      "Commercial planter services",
+      "Residential container gardens",
+      "Seasonal planter rotations",
+      "Planter design and installation",
+      "Planter maintenance"
+    ]
+  }
+  </script>
+
+  {{/* Service schema for service pages */}}
+  {{ if eq .Section "services" }}
+  {{ if and (not .IsSection) (ne .Kind "section") }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "{{ .Title }}",
+    "provider": { "@id": "{{ .Site.BaseURL }}#business" },
+    "areaServed": [
+      {"@type": "City", "name": "Tyler, TX"},
+      {"@type": "City", "name": "Flint, TX"},
+      {"@type": "City", "name": "Bullard, TX"},
+      {"@type": "City", "name": "Whitehouse, TX"},
+      {"@type": "City", "name": "Lindale, TX"},
+      {"@type": "City", "name": "Longview, TX"}
+    ],
+    "description": "{{ $desc }}",
+    "url": "{{ .Permalink }}"
+  }
+  </script>
+  {{ end }}
+  {{ end }}
+
+  {{/* Breadcrumbs for non-home pages (skip 404) */}}
+  {{ if and (not .IsHome) (ne .Kind "404") (ne .Layout "404") }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "{{ .Site.BaseURL }}"}
+      {{ if .Parent }}{{ with .Parent }}
+      , {"@type": "ListItem", "position": 2, "name": "{{ .Title }}", "item": "{{ .Permalink }}"},
+        {"@type": "ListItem", "position": 3, "name": "{{ $.Title }}", "item": "{{ $.Permalink }}"}
+      {{ end }}{{ else }}
+      , {"@type": "ListItem", "position": 2, "name": "{{ .Title }}", "item": "{{ .Permalink }}"}
+      {{ end }}
+    ]
+  }
+  </script>
+  {{ end }}
+
+  {{/* FAQPage schema when the page declares FAQs in front matter */}}
+  {{ with .Params.faq }}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {{ range $i, $item := . }}{{ if $i }},{{ end }}
+      {
+        "@type": "Question",
+        "name": {{ .q | jsonify | safeJS }},
+        "acceptedAnswer": { "@type": "Answer", "text": {{ .a | jsonify | safeJS }} }
+      }
+      {{ end }}
+    ]
+  }
+  </script>
+  {{ end }}
+</head>
+
+<body>
+  <header class="tdh-nav" role="banner">
+    <div class="tdh-container">
+      <div class="tdh-nav__inner">
+        <a href="{{ "" | absURL }}" class="tdh-brand" aria-label="Third Day Horticulture home">
+          <img src="{{ "logo.png" | absURL }}" alt="Third Day Horticulture" class="tdh-brand__mark">
+          <span class="tdh-brand__text">
+            Third Day Horticulture
+            <span class="tdh-brand__sub">Tyler, TX</span>
+          </span>
+        </a>
+
+        {{ if .Site.Menus.main }}
+        <nav aria-label="Primary">
+          <ul class="tdh-nav__links">
+            {{ range .Site.Menus.main }}
+              {{ if not .Parent }}
+              <li>
+                <a href="{{ .URL | absURL }}"{{ if eq $.RelPermalink .URL }} class="is-active"{{ end }}>{{ .Name }}</a>
+              </li>
+              {{ end }}
+            {{ end }}
+          </ul>
+        </nav>
+        {{ end }}
+
+        <div class="tdh-nav__cta">
+          <a class="tdh-btn tdh-btn--primary" href="{{ "contact/" | absURL }}">Get a Quote</a>
+          <button class="tdh-nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
