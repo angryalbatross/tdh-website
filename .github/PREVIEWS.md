@@ -20,11 +20,18 @@ The PR Preview Action (`rossjrw/pr-preview-action`) posts a sticky comment
 on each PR with that exact link and auto-removes the preview folder when
 the PR is closed or merged.
 
-## Production is untouched
+## Production is on a separate repo
 
-Production (`tdhort.com`) is served through CloudFront in front of a
-separate GitHub Pages origin. Nothing in this workflow writes to that
-origin or touches `tdhort.com`. The preview workflow:
+Production (`tdhort.com`) is served from **`3rdDayHort/3rdDayHort.github.io`**
+via GitHub Pages, with CloudFront in front for HTTPS and the custom
+domain. Nothing in the preview workflow writes to that repo.
+
+See `.github/workflows/deploy-production.yml` for the production deploy
+pipeline, which builds this repo's `master` branch and force-pushes the
+output to `3rdDayHort/3rdDayHort.github.io`'s `master`. It requires a
+`PROD_DEPLOY_TOKEN` secret with push access to that repo.
+
+The preview workflow:
 
 - Never writes a `CNAME` into the preview output (it explicitly deletes
   any that ends up there), so the preview Pages site cannot claim the
